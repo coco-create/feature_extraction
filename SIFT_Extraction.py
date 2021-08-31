@@ -111,7 +111,7 @@ def main():
 
 
 
-    book.save('time.xls')
+    book.save('SIFT_time.xls')
 
 
 

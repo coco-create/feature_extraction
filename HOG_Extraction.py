@@ -10,7 +10,7 @@ book = xlwt.Workbook()
 sheet = book.add_sheet(u'time',cell_overwrite_ok=True)
 
 
-'''
+'''源码处理
 class Hog_descriptor():
     #---------------------------#
     #   初始化
