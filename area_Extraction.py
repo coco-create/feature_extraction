@@ -7,7 +7,7 @@ book = xlwt.Workbook()
 sheet = book.add_sheet(u'time1')
 
 camera = cv2.VideoCapture(0)
-#gray = None
+gray = None
 firstframe = None
 i = 0
 pixel_width = 400
@@ -18,13 +18,13 @@ capture = cv2.VideoCapture("video/VIRAT400x240.mp4")
 
 if capture.isOpened():
     while True:
-        ret, frame = capture.read()#如果要读取实时视频 则将此处的capture 改成 camera即可
+        ret, frame = camera.read()#如果要读取实时视频 则将此处的capture 改成 camera即可
         if not ret:
             break
 
         start = time.time()
 
-        #firstframe = gray   #在调用摄像头的实时视频数据时 采用每一帧与前一帧作差，采用视频数据集的时候 用每一帧与第一帧作差
+        firstframe = gray   #在调用摄像头的实时视频数据时 采用每一帧与前一帧作差，采用视频数据集的时候 用每一帧与第一帧作差
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         gray = cv2.GaussianBlur(gray, (21, 21), 0)
         if firstframe is None:
